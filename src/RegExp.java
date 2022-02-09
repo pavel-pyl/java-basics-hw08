@@ -18,7 +18,7 @@ public class RegExp {
         // 3 - String ipPattern = "\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}"
         // I think next variant is more readable, and easy for maintain
         String s = "(25[0-5]|2[0-4][0-9]|[0-1]?[0-9]?[0-9])"; // any number from 0 to 255
-        String ipPattern = String.format("(%s\\.%s\\.%s\\.%s)", s, s, s, s);
+        String ipPattern = String.format("(\\b%s\\.%s\\.%s\\.%s\\b)", s, s, s, s);
         Pattern pattern = Pattern.compile(ipPattern);
         Matcher matcher = pattern.matcher(text);
         if (matcher.find()) {
